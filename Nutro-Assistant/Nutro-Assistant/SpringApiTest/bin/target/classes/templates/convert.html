@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="" th:href="@{/css/convert.css}">
+    <title>Convert Amount</title>
+</head>
+<body>
+    <h2><i>Convert</i></h2>
+    <form th:action="@{/convertAmt}" th:object="${input}" method="post">
+        <div class="page">  
+        <label class="field field_v1">
+          <input type="text" name="itemName" class="field__input" placeholder="e.g: Flour">
+          <span class="field__label-wrap">
+            <span class="field__label">Enter Ingredient Name</span>
+          </span>
+        </label>
+        <label class="field field_v2">
+          <input type="text" name="weightUnit" class="field__input" placeholder="e.g: g/kg">
+          <span class="field__label-wrap">
+            <span class="field__label">Enter the Unit</span>
+          </span>
+        </label>    
+        <label class="field field_v2">
+          <input type="text" name="sUnit" class="field__input" placeholder="e.g: cup">
+          <span class="field__label-wrap">
+            <span class="field__label">Enter your Measurement tool</span>
+          </span>
+        </label>
+         <label class="field field_v2">
+          <input type="text" name="SAmount" class="field__input" placeholder="0.0">
+          <span class="field__label-wrap">
+            <span class="field__label"></span>
+          </span>
+        </label>
+        <input type="submit" value="Get Amount" class="button"></input>
+      </div> 
+    </form>
+    <div id="overlay">
+        <div>
+          <h3>Your conversion says...</h3><br>
+          <span th:text="${answer}"></span><br>
+        </div>
+      </div>
+        
+       
+
+
+</body>
+</html>

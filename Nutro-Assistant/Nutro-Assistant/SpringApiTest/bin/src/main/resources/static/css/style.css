@@ -1,0 +1,68 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+.navigation img{
+    height: 60px;
+}
+.page-header{
+    background-color: #4c987f;
+    height: 60vh;
+    color: white;
+}
+.page-header img{
+    width: 100%;
+    height: 100%;
+}
+.card{
+    color: white;
+}
+.content-area{
+    background-color: #2E3436;
+}
+.footer{
+    width: 100%;
+    height: 50px;
+    background-color: #4c987f;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.quickans{
+    height: 400px;
+}
+.quickans h3{
+    color: white;
+}
+.quickans input{
+    width: 260px;
+    font-size: 15px;
+}
+.ans{
+    border: 1px solid white;
+    color: white;
+}
+.recipeInput{
+    margin-top: 100px;
+    color: white;
+    text-align: center;
+}
+.recipeInput div input{
+    position: absolute;
+    top: 280px;
+    left: 630px;
+}
+/* .out{
+    color: white;
+    margin-top: 100px;
+    text-align: center;
+} */
+.tableout{
+    position: relative;
+    top: 90px;
+    border: 1px solid white;
+    color: white;
+    width: 1000px;
+    text-align: center;
+    margin-left:auto;            /* to bring the table to center */
+    margin-right:auto;            /* and this */    
+}

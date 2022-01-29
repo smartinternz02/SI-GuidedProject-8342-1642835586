@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Nutrition By Dish</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700&display=swap" rel="stylesheet">
+  	<link rel="stylesheet" href="" th:href="@{/css/nut.css}">
+</head>
+
+<body>
+    <h1>What's in your dish?</h1>
+    
+    <form th:action="@{/nutbydish}" th:object="${input}" method="post" >
+        <div class="search">
+            <input type="text" name="dishName" class="search-box" />
+            <span class="search-button">
+              <span class="search-icon"></span>
+            </span>
+          </div>
+    </form>
+    
+    <div class="boxes">
+        <div class="one left-shadow">
+            <h3>Calories</h3>
+            <p th:text="${cals}"></p>
+        </div>
+    
+        <div class="one middle-shadow" >
+            <h3>Protein(g)</h3>
+            <p th:text="${prots}"></p>
+        </div>
+        
+        <div class="one middle-shadow" >
+            <h3>Carbs(g)</h3>
+            <p th:text="${carbs}"></p>
+        </div>
+        
+        <div class="one right-shadow">
+            <h3>Fat(g)</h3>
+            <p th:text="${fat}"></p>
+        </div>
+    </div>
+    
+      <script>
+            const button = document.querySelector('.search-button')
+  const search = document.querySelector('.search')
+
+  button.addEventListener("click", ()=>{
+    search.classList.toggle("open");
+  });          
+      </script>
+</body>
+</html>

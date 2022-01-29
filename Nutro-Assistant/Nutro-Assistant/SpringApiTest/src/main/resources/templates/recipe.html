@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="" th:href="@{/css/style.css}">
+
+  <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+  <!-- owl slider links -->
+  <link rel="stylesheet" href="" th:href="@{/css/owl.carousel.min.css}">
+  <link rel="stylesheet" href="" th:href="@{/css/owl.theme.default.min.css}">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- googlefonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
+  <title>Match Recipes</title>
+  </head>
+  <body style="background-color: #2E3436">
+    <nav class="navbar navbar-expand-lg navigation">
+        <div class="container ">
+          <a class="navbar-brand text-white" href="#"><img src="" th:src="@{image/workpls(1).png}" alt="error"> Nutrino Assistant</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="#">Quick Answer</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Recipe By Calories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Convert Amount</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#">Nutrition By Dish</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+      
+	<div class="recipeInput">
+        <h4>Enter the Calorie </h4>
+		<form th:action="@{/recipebyCal}" th:object="${input}" method="POST">
+			<input type="text" name="CalorieCount" placeholder="eg: 2000">
+			<div>
+		    	<input class="btn btn-primary" type="submit" value="Get Recipes"></input>
+		    </div>
+		</form>
+	</div>
+    <table class="tableout" cellspacing="0" cellpadding="5">
+        <thead>
+           <tr>
+               <th>Id</th>
+               <th>title</th>
+               <th>Ready in (mins)</th>
+               <th>No of Servings</th>
+               <th>Link to Recipe</th>
+           </tr>
+            </thead>
+            <tbody>
+           <tr th:each="l : ${list}">
+               <td th:text="${l.id}"></td>
+               <td th:text="${l.title}"></td>
+               <td th:text="${l.readyInMinutes}"></td>
+               <td th:text="${l.servings}"></td>
+               <td th:text="${l.sourceUrl}" th:color="blue"></td>
+          </tr>
+           </tbody>
+       </table> 
+</body>
+</html>
